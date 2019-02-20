@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Graph</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+        <script src="/assets/js/jquery.js"></script>
+        <!-- <script>
+            $(document).ready(()=>{
+                $(window).load("/displayLoan");
+            });
+        </script> -->
+    </head>
+    <body>
+        <div class="header" id="header">
+            <a href="/home" class="header_title">Jai Ambe<br>Mitra Mandal</a>
+            <div class="header_links">
+              <a href="/home">Home</a>
+              <a href="/members">Members</a>
+			  <a href="/loan">Loan</a>
+              <a href="/graph" style="color: greenyellow;">Graph</a>
+              <a href="/deletedMembers">Deleted</a>
+              <a href="/schemes">Schemes</a>
+              <a href="/logout">Logout</a>
+            </div>
+		</div>
+		<div class="graph_back">
+            <table border="1" cellpadding="20" class="graphTable1">
+                <tr>
+                    <th>Month & Year</th>
+                    <th>Total Member 1000's Collected (&#8377;)</th>
+                    <th>Total Loan Collected (&#8377;)</th>
+                    <th>Total Amount Collected (&#8377;)</th>
+                </tr>
+                <tr>
+                    <td>
+                        <form method="POST" action="/graphDet">
+                            <select name="graphMonth">
+                                <% for(var i = 1; i <= 12; i++) { %>
+                                <option><%= i %></option>
+                                <% } %>
+                            </select>
+                            <select name="graphYear">
+                                <% for(var i = 2000; i <= 2025; i++) { %>
+                                <option><%= i %></option>
+                                <% } %>
+                            </select>
+                            <input type="submit" class="submitGraph">
+                        </form>
+                    </td>
+                    <td><%= graphRow*1000 %></td>
+                    <% if(gRowL>0) { %>
+                    <td><%= graphRowLoan[0].sumLoan %></td>
+                    <% } else { %>
+                    <td>NaN</td>
+                    <% } %>
+                    <% if(gRowL>0) { %>
+                    <td><%= graphRow*1000 + graphRowLoan[0].sumLoan %></td>
+                    <% } else { %>
+                    <td>NaN</td>
+                    <% } %>
+                </tr>
+            </table>
+		</div>
+	</body>
+</html>

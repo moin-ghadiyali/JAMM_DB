@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+  <script src="/assets/js/jquery.js"></script>
+  <script>
+    $(document).ready(()=>{
+      $(window).load("/displayAll");
+    });
+  </script>
+</head>
+<body>
+<div class="header" id="header">
+  <a href="/home" class="header_title">Jai Ambe<br>Mitra Mandal</a>
+  <div class="header_links">
+    <a href="/home">Home</a>
+    <a href="/members" style="color: greenyellow;">Members</a>
+    <a href="/loan">Loan</a>
+    <a href="/graph">Graph</a>
+    <a href="/deletedMembers">Deleted</a>
+    <a href="/schemes">Schemes</a>
+    <a href="/logout">Logout</a>
+  </div>
+</div>
+<div class="back_1_members">
+  <div id="add_member_modal">
+    <div class="add_member_box">
+      <a id="close">&times;</a>
+      <h1>Add a New Member</h1>
+      <div class="line_1"></div>
+      <form method="POST" action="/members">
+        <table align="center" cellpadding="5">
+          <tr>
+            <td>
+              <label for="id">ID: </label>
+            </td>
+            <td>
+              <input type="number" class="add_mem_input" name="id" id="id" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="name">Name:</label>
+            </td>
+            <td>
+              <input type="text" class="add_mem_input" name="name" id="name" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="name">City Name:</label>
+            </td>
+            <td>
+              <input type="text" class="add_mem_input" name="cityName" id="cityName" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="idate">Initial Date:</label>
+            </td>
+            <td>
+              <input type="date" class="add_mem_input" name="idate" id="idate" min="2000-01-01" maxlength="8" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="idate">Final Date:</label>
+            </td>
+            <td>
+              <input type="date" class="add_mem_input" name="fdate" id="fdate" min="2000-01-01" maxlength="10" required>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" class="submit_btn" value="Add Member">
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+  <div id="add_mem">&#43;</div>
+  <div class="back_1_members_content">
+      <table cellpadding="5">
+        <tr>
+          <td>
+            <h1>Members</h1>
+          </td>
+          <td align="right">
+            <form action="/search" method="POST" class="form_search">
+              <input type="text" class="search_bar" name="search" id="search" placeholder="Search..." autocomplete="on" spellcheck="false" required>
+              <script>
+                $(document).ready(function() {
+                  $("#search").change(function() {
+                    ("#myTable tr").load("/search");
+                  });
+                });
+              </script>
+            </form>
+          </td>
+        </tr>
+      </table>
+    <div class="line_1"></div>
+    <!-- <table cellpadding="15" class="dropdown_table">
+      <tr>
+        <td align="left">
+          <button onclick="dropDown()" class="dropBtn">Select</button>
+          <div class="dropDown_content" id="dropDown">
+            <a href="/displayAll">All</a>
+            <a href="/members/kalyan">Kalyan</a>
+            <a href="/members/investors">Ulhasnagar</a>
+          </div>
+        </td> -->
+        <!-- <td><a href="/sortByNumber">Sort By Number</a></td>
+        <td><a href="/sortByDate">Sort By Date</a></td>
+        <td><a href="/sortByName">Sort By Name</a></td> -->
+      <!-- </tr>
+    </table> -->
+    <!-- <div class="selectCityOpt">
+      <form method="GET">
+        <select id="selectCity">
+          <option>Select</option>
+          <option>kalyan</option>
+          <option>Shahad</option>
+          <option>Mumbra</option>
+        </select>
+      </form>
+    </div> -->
+    <!-- <script>
+      // $(document).ready(() => {
+      //   $("#selectCity option").click(() => {
+      //     $variable = $("#selectCity option").innerHTML;
+      //     console.log($variable);
+      //     $link = '/members/' + $variable;
+      //     $("#myTable tr").load($link);
+      //   });
+      // });
+      // $(document).ready(() => {
+      //   $("#selectCity").change(() => {
+      //     $("#myTable tr").load("/members/kalyan");
+      //   })
+      // });
+    </script> -->
+    <!-- <div class="citySelect">
+      <form method="GET" action="/citySelect">
+        <select name="selectCity">
+          <option>mumbra</option>
+          <option>SHAHAD</option>
+        </select>
+        <input type="submit">
+      </form>
+    </div> -->
+    <div class="member_list">
+      <table border="2" cellpadding="18" class="mem_table">
+        <tr>
+          <th>
+            ID
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Initial Date
+          </th>
+          <th>
+            Final Date
+          </th>
+          <th>
+            City
+          </th>
+          <th>
+            View
+          </th>
+        </tr>
+        <tbody id="myTable">
+        <% if(rows>0) { %>
+        <% for(var i = 0; i < rows; i++) { %>
+          <tr>
+            <td><%= users[i].id %></td>
+            <td><%= users[i].name %></td>
+            <td><%= users[i].date.toDateString() %></td>
+            <td><%= users[i].fdate.toDateString() %></td>
+            <td><%= users[i].cityname.toUpperCase() %></td>
+            <td>
+              <a id="updateBtn" href="/update/<%=users[i].memid%>" target="_blank">Update</a>
+              <a href="/print/<%=users[i].name%>">Print</a>
+              <a href="/delete/<%=users[i].name%>">Delete</a>
+            </td>
+          </tr>
+        <% } %>
+        <% } else { %>
+          <tr>
+            <td>Null</td>
+            <td>Null</td>
+            <td>Null</td>
+            <td>Null</td>
+            <td>Null</td>
+            <td>Null</td>
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/ejs.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

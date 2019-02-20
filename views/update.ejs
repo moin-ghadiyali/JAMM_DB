@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Member Data</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(()=>{
+                $(window).load("/update/<%=memID%>");
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header" id="header">
+            <a href="/home" class="header_title">Jai Ambe<br>Mitra Mandal</a>
+                <div class="header_links">
+                    <a href="/home">Home</a>
+                    <a href="/members" style="color: greenyellow;">Members</a>
+                    <a href="/loan">Loan</a>
+                    <a href="/graph">Graph</a>
+                    <a href="/deletedMembers">Deleted</a>
+                    <a href="/schemes">Schemes</a>
+                    <a href="/logout">Logout</a>
+                </div>
+        </div>        
+        <div class="back_1_update">
+            <div class="back_1_update_content">
+                <div class="memberInfo">
+                    <h2>Member Details</h2>
+                    <div style="background:rgba(0,0,0,0.5);">
+                    <div class="line"></div>
+                    <h2><%= userDetails[0].id %> / <%= userDetails[0].name %> / <%= userDetails[0].cityname %> / <%= userDetails[0].date.toDateString() %></h2>
+                    <div class="line"></div>
+                    </div>
+                </div>
+                <table cellpadding="15" id="updTable1">
+                    <form method="POST" action="/updateData/<%=memID%>">
+                        <tr>
+                            <th colspan="2">UPDATE</th>
+                        </tr>
+                        <tr>
+                            <td><label for="month">Month:</label></td>
+                            <td>
+                                <select name="month" id="month" required>
+                                    <% for(var l = 1; l <= 60; l++) { %>
+                                    <option><%= l %></option>
+                                    <% } %>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="date">Payment Date:</label></td>
+                            <td><input type="date" name="date" min="2000-01-01" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="amount">Amount:</label></td>
+                            <td><input type="number" name="amount" value="1000" id="amount" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="UPDATE" id="updateBtn"></td>
+                        </tr>
+                    </form>
+                    <script>
+                        $(document).ready(()=>{
+                            $("#month").click(()=>{
+                                $("#amount").val($("#month").val()*1000);
+                            });
+                        });
+                    </script>
+                </table>
+                <table cellpadding="20" border="1" id="updTable">
+                    <tr>
+                        <th>Month</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Interest</th>
+                        <th>Action</th>
+                    </tr>
+                    <% if(memRow>0) { %>
+                    <% for(var i = 0; i < memRow; i++) { %>
+                    <tr>
+                        <td><%= memData[i].month %></td>
+                        <% if(memData[i].pdate == "0000-00-00") { %>
+                        <td><%= memData[i].pdate %></td>
+                        <% } else { %>
+                        <td><%= memData[i].pdate.toDateString() %></td>
+                        <% } %>
+                        <td><%= memData[i].amount %></td>
+                        <td><%= memData[i].interest %></td>
+                        <td><a href="/deleteDue/<%=memID%>/<%=memData[i].month%>/<%=memData[i].pdate%>">Delete</a></td>
+                    </tr>
+                    <% } %>
+                    <% } else { %>
+                    <tr>
+                        <td>Null</td>
+                        <td>Null</td>
+                        <td>Null</td>
+                        <td>Null</td>
+                        <td>Null</td>
+                    </tr>
+                    <% } %>
+                    <tfoot>
+                        <tr>
+                            <% var userTotal = userTotal1[0].max + userTotal2[0].sum; %>
+                            <td colspan="2">Total Amount (with Interest): <%= userTotal %></td>
+                            <td colspan="3">Total Amount : <%= userTotal1[0].max %> / Interest : <%= userTotal2[0].sum %></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+.printPage {
+    position: relative;
+    background-attachment: fixed;
+    background: white;
+    padding: 1rem;
+    text-align: center;
+}
+.printPage h3 {
+    position: relative;
+    top: -2rem;
+}
+.printPage h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+    top: 2rem;
+    font-size: 2.5rem;
+    padding-bottom: 3.3rem;
+    border-bottom: 5px solid black;
+    text-transform: uppercase;
+    width: 100%;
+    margin: auto;
+  }
+.printPage p {
+    position: absolute;
+    right: 1rem;
+}
+.printPage .printContent {
+    position: relative;
+    top: 5rem;
+}
+.printPage .printContent table {
+    width: 100%;
+}
+.printPage .printContent table tr td {
+    text-align: left;
+    font-weight: bolder;
+    padding: .9rem .4rem;
+}
+.printPage .printContent table tr td:nth-child(2) {
+    width: 65%;
+}
+.printPage .printContent .signature {
+    position: absolute;
+    bottom: -21rem;
+    right: 10rem;
+}
+.printPage .printContent .signature h3 {
+    border-top: 2px solid black;
+    width: 300%;
+    display: block;
+    padding-top: 1.2rem;
+}
+.printPage .bottomLine h3 {
+    width: 100%;
+    border-bottom: 5px solid black;
+    position: relative;
+    top: 25rem;
+}
+.printPage .contact {
+    position: absolute;
+    bottom: -26rem;
+    left: 50%;
+    transform: translate(-50%);
+    font-weight: bolder;
+}

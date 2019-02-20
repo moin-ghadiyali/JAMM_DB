@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Member Data</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(()=>{
+                $(window).load("/updateLoan/<%=loanID%>");
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header" id="header">
+            <a href="/" class="header_title">Jai Ambe<br>Mitra Mandal</a>
+                <div class="header_links">
+                    <a href="/">Home</a>
+                    <a href="/members">Members</a>
+                    <a href="/loan" style="color: greenyellow;">Loan</a>
+                    <a href="/graph">Graph</a>
+                    <a href="/deletedMembers">Deleted</a>
+                    <a href="/schemes">Schemes</a>
+                    <a href="/logout">Logout</a>
+                </div>
+        </div>
+        <div class="back_1_update">
+            <div class="back_1_update_content">
+                <div class="memberInfo">
+                    <h2>Loan Member Details</h2>
+                    <div style="background:rgba(0,0,0,0.5);">
+                    <div class="line"></div>
+                    <h2><%= loanUserDetails[0].id %> / <%= loanUserDetails[0].name %> / <%= loanUserDetails[0].cityname %> / <%= loanUserDetails[0].date.toDateString() %></h2>
+                    <div class="line"></div>
+                    </div>
+                </div>
+                <table cellpadding="15" id="updTable1">
+                    <form method="POST" action="/updateLoan/<%=loanID%>">
+                        <tr>
+                            <th colspan="2">UPDATE</th>
+                        </tr>
+                        <tr>
+                            <td><label for="month">Month:</label></td>
+                            <td>
+                                <select name="month" id="month" required>
+                                    <% for(var l = 1; l <= 20; l++) { %>
+                                    <option><%= l %></option>
+                                    <% } %>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="date">Payment Date:</label></td>
+                            <td><input type="date" name="date" min="2000-01-01" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="interest">Interest (%):</label></td>
+                            <td><input type="text" name="interest" value="1.25" min="1" max="10" id="interest" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="amount">Amount (&#8377;):</label></td>
+                            <td><input type="number" name="amount" value="<%=loanUserDetails[0].amount%>" id="amount" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="UPDATE"></td>
+                        </tr>
+                    </form>
+                </table>
+                <% var amt = loanUserDetails[0].amount; %>
+                <% var int = (0.0125 * loanUserDetails[0].amount) * 20; %>
+                <% var amt_with_interest = amt + int; %>
+                <h3>Total Amount To Be Paid With Interest: &#8377;<%= amt_with_interest %>/-</h3>
+                <table cellpadding="20" border="1" id="updTable">
+                    <tr>
+                        <th>Month</th>
+                        <th>Date</th>
+                        <th>Amount w/I (&#8377;)</th>
+                        <th>Interest</th>
+                        <th>Action</th>
+                    </tr>
+                    <% if(updateLoanRow>0) { %>
+                    <% for(var i = 0; i < updateLoanRow; i++) { %>
+                    <tr>
+                        <td><%= updateLoan[i].month %></td>
+                        <% if(updateLoan[i].pdate == "0000-00-00") { %>
+                        <td><%= updateLoan[i].pdate %></td>
+                        <% } else { %>
+                        <td><%= updateLoan[i].pdate.toDateString() %></td>
+                        <% } %>
+                        <td><%= updateLoan[i].amount %></td>
+                        <td style="width: 20%;"><%= updateLoan[i].interest %> (<%= updateLoan[i].intpercent %>%)</td>
+                        <td><a href="/deleteDueLoan/<%=loanID%>/<%=updateLoan[i].month%>">Delete</a></td>
+                    </tr>
+                    <% } %>
+                    <% } else { %>
+                    <tr>
+                        <td>Null</td>
+                        <td>Null</td>
+                        <td>Null</td>
+                        <td>Null</td>
+                        <td>Null</td>
+                    </tr>
+                    <% } %>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">Total Amount Paid (with Interest): &#8377;<%= sumAmt[0].sumAmount %> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Interest: &#8377;<%= sumInt[0].sumInterest %></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

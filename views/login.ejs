@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+</head>
+<body>
+<div class="back_1_login">
+  <div class="back_1_login_content">
+    <form method="POST" action="/login_details">
+      <table cellpadding="15" align="center">
+        <tr>
+          <td colspan="2">
+            <h1>Login</h1>
+            <div class="line_1"></div><br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="username">Username</label>
+          </td>
+          <td>
+            <input type="text" class="login_input" placeholder="Enter Your Username Here..." name="username" autocomplete="off">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="password">Password</label>
+          </td>
+          <td>
+            <input type="password" class="login_input" placeholder="Enter Your Password Here..." name="password" id="password">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="checkbox" name="pass_visible" class="pass_visible" onclick="myFunction()">Show Password</td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" class="login_btn" name="submit"></td>
+        </tr>
+      </table>
+      <script>
+          function myFunction() {
+          var x;
+          x = document.getElementById("password");
+          if(x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+      </script>
+    </form>
+  </div>
+</div>
+<script src="/assets/js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Print</title>
+  <link rel="stylesheet" href="/assets/css/print.css">
+</head>
+<body>
+    <div class="printPage">
+        <h1>Jai Ambe Mitra Mandal</h1>
+        <h3>B - 101, Saadhana Apartment, Jai Bheem Colony, Shahad, Ulhasnagar - 400 899</h3>
+        <p>DATE: ___ / ___ / _____</p>
+        <div class="printContent">
+          <table>
+            <tr>
+              <td>ID Number: </td>
+              <td><%= printData[0].id %></td>
+            </tr>
+            <tr>
+              <td>Name: </td>
+              <td><%= printData[0].name %></td>
+            </tr>
+            <tr>
+              <td>Initial Date: </td>
+              <td><%= printData[0].date.toDateString() %></td>
+            </tr>
+            <tr>
+              <td>Final Date: </td>
+              <td><%= printData[0].fdate.toDateString() %></td>
+            </tr>
+            <tr>
+              <td>Total Amount Paid:</td>
+              <td><%= sumOfAmount[0].sumOfAmount %></td>
+            </tr>
+            <tr>
+              <td>Interest: </td>
+              <td><%= sumOfInterest[0].sumOfInterest %></td>
+            </tr>
+            <tr>
+              <td>Total Amount With Interest: </td>
+              <td><%= sumOfAmount[0].sumOfAmount + sumOfInterest[0].sumOfInterest %></td>
+            </tr>
+          </table>
+          <div class="signature">
+              <h3>Signature</h3>
+          </div>
+        </div>
+        <div class="bottomLine"><h3></h3></div>
+        <p class="contact">Sagar Raval: +91 9082 199 230</p>
+    </div>
+</body>
+</html>

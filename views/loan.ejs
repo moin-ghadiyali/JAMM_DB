@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loan</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet'>
+        <script src="/assets/js/jquery.js"></script>
+        <script>
+            $(document).ready(()=>{
+                $(window).load("/displayLoan");
+            });
+            $(document).ready(function () {
+              $("#searchForLoan").on("keyup", function() {
+                var valueLoan = $(this).val().toLowerCase();
+                $("#myTableLoan tr").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(valueLoan) > -1);
+                });
+              });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header" id="header">
+            <a href="/home" class="header_title">Jai Ambe<br>Mitra Mandal</a>
+            <div class="header_links">
+              <a href="/home">Home</a>
+              <a href="/members">Members</a>
+              <a href="/loan" style="color: greenyellow;">Loan</a>
+              <a href="/graph">Graph</a>
+              <a href="/deletedMembers">Deleted</a>
+              <a href="/schemes">Schemes</a>
+              <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="back_1_loan">
+            <div id="add_member_modal">
+                <div class="add_member_box">
+                  <a id="close">&times;</a>
+                  <h1>Loan Member</h1>
+                  <div class="line_1"></div>
+                  <form method="POST" action="/loan">
+                    <table align="center" cellpadding="5">
+                      <tr>
+                        <td>
+                          <label for="id">ID: </label>
+                        </td>
+                        <td>
+                          <input type="number" class="add_mem_input" name="id" id="id" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="name">Name:</label>
+                        </td>
+                        <td>
+                          <input type="text" class="add_mem_input" name="name" id="name" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="name">City Name:</label>
+                        </td>
+                        <td>
+                          <input type="text" class="add_mem_input" name="cityName" id="cityName" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="idate">Initial Date:</label>
+                        </td>
+                        <td>
+                          <input type="date" class="add_mem_input" name="idate" id="idate" min="2000-01-01" maxlength="8" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="idate">Final Date:</label>
+                        </td>
+                        <td>
+                          <input type="date" class="add_mem_input" name="fdate" id="fdate" min="2000-01-01" maxlength="10" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="amount">Loan Amount:</label>
+                        </td>
+                        <td>
+                          <input type="number" class="add_mem_input" name="amount" id="amount" required>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <input type="submit" class="submit_btn" value="Add Member">
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                </div>
+              </div>
+            <div id="add_mem">&#43;</div>
+            <div class="back_1_loan_content">
+                <table cellpadding="5">
+                    <tr>
+                      <td>
+                        <h1>Loan Members</h1>
+                      </td>
+                      <td align="right">
+                        <form action="/searchLoan" method="POST" class="form_search">
+                          <input type="text" class="search_bar" name="searchForLoan" id="searchForLoan" placeholder="Search..." autocomplete="on" spellcheck="false" required>
+                        </form>
+                        <script>
+                            $("#searchForLoan").change(function () {
+                                ("#myTableLoan tr").load("/searchLoan");
+                            });
+                        </script>
+                      </td>
+                    </tr>
+                </table>
+                <div class="line_1"></div>
+                <div class="member_list">
+                    <table border="2" cellpadding="18" class="mem_table">
+                      <tr>
+                        <th>
+                          ID
+                        </th>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Initial Date
+                        </th>
+                        <th>
+                          Final Date
+                        </th>
+                        <th>
+                          City
+                        </th>
+                        <th>
+                          Amount
+                        </th>
+                        <th>
+                          View
+                        </th>
+                      </tr>
+                      <tbody id="myTableLoan">
+                        <% if(rowsLoan > 0) { %>
+                        <% for(var i = 0; i < rowsLoan; i++) { %>
+                            <tr> 
+                                <td><%= usersLoan[i].id %></td>
+                                <td><%= usersLoan[i].name %></td>
+                                <td><%= usersLoan[i].date.toDateString() %></td>
+                                <td><%= usersLoan[i].fdate.toDateString() %></td>
+                                <td><%= usersLoan[i].cityname.toUpperCase() %></td>
+                                <td><%= usersLoan[i].amount %></td>
+                                <td>
+                                    <a id="updateBtn" href="/updateLoan/<%=usersLoan[i].loanid%>" target="_blank">Update</a>
+                                    <a href="/printLoan/<%=usersLoan[i].id%>">Print</a>
+                                    <a href="/deleteLoan/<%=usersLoan[i].name%>">Delete</a>
+                                </td>
+                                <!-- <div class="deleteConfirm">
+                                  <div class="delete">
+                                    <h3>Do you want to remove  from your Loan Members? </h3>
+                                    <a href="/loan">No</a>
+                                    <a >Yes</a>
+                                  </div>
+                                </div> -->
+                            </tr>
+                        <% } %>
+                        <% } else { %>
+                            <tr>
+                                <td>Null</td>
+                                <td>Null</td>
+                                <td>Null</td>
+                                <td>Null</td>
+                                <td>Null</td>
+                                <td>Null</td>
+                                <td>Null</td>
+                              </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                    <!-- <script>
+                      $(".deleteBtn").click(()=>{
+                        $(".deleteConfirm").css("display", "block");
+                      });
+                    </script> -->
+                </div>
+            </div>
+        </div>
+        <script src="/node_modules/reload/index.js"></script>
+        <script src="/assets/js/ejs.js"></script>
+        <script src="/assets/js/main.js"></script>
+    </body>
+</html>

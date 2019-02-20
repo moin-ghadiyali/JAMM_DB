@@ -1,0 +1,1238 @@
+body {
+  margin: 0;
+  font-family: 'Antic';
+  background-attachment: fixed;
+  background: #555555;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  background: rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px grey;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: greenyellow;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(173,255,47,0.8);
+}
+
+/* Header */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #222222;
+  border-bottom: 1px solid greenyellow;
+  padding: .9rem;
+  color: white;
+  z-index: 1000;
+}
+.header .header_title {
+  position: relative;
+  top: .1rem;
+  left: .6rem;
+  text-decoration: none;
+  color: greenyellow;
+  font-size: 1.2rem;
+  text-align: center;
+  float: left;
+  text-transform: uppercase
+}
+.header .header_links {
+  float: right;
+
+}
+.header .header_links a {
+  position: relative;
+  top: .8rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 1.7rem 2.1rem;
+  transition: 160ms;
+}
+.header .header_links a:hover {
+  color: greenyellow;
+  background: rgba(0,0,0,0.6);
+  transition: 160ms;
+}
+
+/* Header */
+
+/* Footer */
+
+.footer {
+  position: relative;
+  height: 15rem;
+  padding: 1rem;
+  background: rgba(0,0,0,0.6);
+}
+
+/* Footer */
+
+/* Index Background-1 */
+
+.back_1_index {
+  position: relative;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+}
+.back_1_index .back_1_index_content {
+  position: relative;
+  top: 9rem;
+}
+.back_1_index .back_1_index_content h1 {
+  font-size: 4rem;
+  line-height: 2.5rem;
+  color: greenyellow;
+  text-shadow: 1px 2px 2px #000000;
+  text-transform: uppercase
+}
+.back_1_index .back_1_index_content h2 {
+  font-weight: lighter;
+}
+.back_1_index .back_1_index_content a {
+  position: relative;
+  top: 2.9rem;
+  text-decoration: none;
+  color: greenyellow;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  border: 3px solid greenyellow;
+  background: rgba(0,0,0,0.3);
+  border-radius: 3px;
+  transition: 160ms;
+}
+.back_1_index .back_1_index_content a:hover {
+  background: rgba(0,0,0,0.6);
+  transition: 160ms;
+}
+
+/* Index Background-1 */
+
+/*Area Background-1*/
+
+.back_1_area {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 70rem;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+  background-position: center;
+  background-size: cover;
+}
+.back_1_ar*ea #add_mem {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  right: 1.5rem;
+  bottom: 1.5rem;  
+  background: rgba(0,0,0,0.8);
+  border: 3px solid greenyellow;
+  border-radius: 50%;
+  font-size: 2.3rem;
+  text-align: center;
+  color: greenyellow;
+  z-index: 5000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 160ms;
+}
+.back_1_area #add_mem:hover {
+  background: rgba(0,0,0,0.6);
+  transition: 160ms;
+}
+.back_1_area #del_mem {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  right: 8.5rem;
+  bottom: 1.5rem;  
+  background: rgba(0,0,0,0.8);
+  border: 3px solid greenyellow;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  text-align: center;
+  color: greenyellow;
+  z-index: 5000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 160ms;
+}
+.back_1_area #del_mem:hover {
+  background: rgba(0,0,0,0.6);
+  transition: 160ms;
+}
+.back_1_area #add_member_modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 6000;
+  overflow: hidden;
+  transition: 160ms;
+}
+.back_1_area #add_member_modal .add_member_box {
+  width: 90%;
+  height: 50%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%);
+  border: 3px solid greenyellow;
+  padding: 1rem;
+  background: rgba(0,0,0,0.9);
+  text-align: center;
+  color: white;
+  z-index: 4000;
+}
+.back_1_area #add_member_modal .add_member_box #close {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  position: fixed;
+  top: 0;
+  right: 5px;
+  padding: .7rem;
+  cursor: pointer;
+  transition: 160ms;
+}
+.back_1_area #add_member_modal .add_member_box #close:hover {
+  color: greenyellow;
+  transition: 160ms;
+}
+.back_1_area #add_member_modal .add_member_box h1 {
+  text-shadow: 1px 1px 1px #000000;
+  color: greenyellow;
+}
+.back_1_area #add_member_modal .add_member_box .line_1 {
+  position: relative;
+  top: .7rem;
+  width: 50%;
+  height: 2px;
+  background: greenyellow;
+  margin: auto;
+  box-shadow: 1px 1px 1px #000000;
+}
+.back_1_area #add_member_modal .add_member_box table {
+  position: relative;
+  top: 3rem;
+}
+/* .back_1_area #add_member_modal .add_member_box form table tr td label {
+  text-transform: uppercase;
+} */
+.back_1_area #add_member_modal .add_member_box table .add_mem_input {
+  padding: 1rem;
+  width: 15rem;
+  position: relative;
+  border: 2px solid white;
+  border-radius: 3px;
+  background: transparent;
+  color: white;
+}
+.back_1_area #add_member_modal .add_member_box table .submit_btn {
+  padding: 1rem;
+  width: 100%;
+  position: relative;
+  border: 2px solid greenyellow;
+  color: greenyellow;
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: lighter;
+  transition: 160ms;
+}
+.back_1_area #add_member_modal .add_member_box table .submit_btn:hover {
+  background: rgba(173,255,47,0.6);
+  color: white;
+  text-shadow: 1px 1px 1px #000000;
+  transition: 160ms;
+}
+.back_1_area .back_1_area_content {
+  position: relative;
+  top: 6rem;
+}
+.back_1_area .back_1_area_content .table_head {
+  width: 100%;
+}
+.back_1_area .back_1_area_content .table_head h1 {
+  font-size: 2rem;
+  color: greenyellow;
+  text-shadow: 1px 1px 1px #000000;
+  text-align: left;
+}
+.back_1_area .back_1_area_content .line_1 {
+  position: relative;
+  top: .7rem;
+  width: 100%;
+  height: 2px;
+  background: greenyellow;
+  margin: auto;
+  box-shadow: 1px 1px 1px #000000;
+}
+.back_1_area .back_1_area_content .search_bar {
+  position: relative;
+  width: 23rem;
+  padding: 1.2rem;
+  border: 2px solid white;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.2);
+  color: white;
+}
+.back_1_area .back_1_area_content .search_bar:focus {
+  border: 2px solid greenyellow;
+  color: white;
+}
+.back_1_area .back_1_area_content .area_div table {
+  width: 100%;
+  border: 2px solid greenyellow;
+}
+.back_1_area .back_1_area_content .area_div table tr td a {
+  text-decoration: none;
+  color: white;
+}
+.back_1_area .back_1_area_content .area_div {
+  position: relative;
+  top: 4rem;
+  margin: auto;
+}
+/* .back_1_area .back_1_area_content .area_div a {
+  text-decoration: none;
+}
+.back_1_area .back_1_area_content .area_div a .area {
+  width: 90%;
+  position: relative;
+  text-decoration: none;
+  padding: 2rem;
+  color: greenyellow;
+  background: rgba(0,0,0,0.8);
+  margin: auto;
+  border-bottom: 1px solid greenyellow;
+  cursor: pointer;
+  transition: 160ms;
+}
+.back_1_area .back_1_area_content .area_div a .area:hover {
+  background: rgba(0,0,0,0.7);
+  transition: 160ms;
+} */
+
+/*Area Background-1*/
+
+/*Schemes Background-1*/
+
+.back_1_schemes {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 70rem;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  background: #555555;
+}
+.back_1_schemes .back_1_schemes_content {
+  position: relative;
+  top: 6rem;
+}
+.back_1_schemes .back_1_schemes_content h1 {
+  font-size: 3rem;
+  color: greenyellow;
+  text-shadow: 1px 1px 1px #000000;
+}
+.back_1_schemes .back_1_schemes_content .line_1 {
+  position: relative;
+  width: 500px;
+  height: 4px;
+  background: greenyellow;
+  margin: auto;
+  box-shadow: 1px 1px 1px #000000;
+}
+.back_1_schemes .back_1_schemes_content table {
+  position: relative;
+  top: 4rem;
+  width: 100%;
+  border: 3px solid greenyellow;
+  background: rgba(0,0,0,0.5);
+}
+.back_1_schemes .back_1_schemes_content table tr:nth-child(even) {
+  background: rgba(0,0,0,0.4)
+}
+.back_1_schemes .back_1_schemes_content table tr th:first-child, .back_1_schemes .back_1_schemes_content table tr td:first-child {
+  width: 10%;
+}
+
+/*Schemes Background-1*/
+
+/*Members Background-1*/
+
+.back_1_members {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+.back_1_members_content {
+  position: relative;
+  top: 6rem;
+}
+.back_1_members .back_1_members_content .dropBtn {
+  position: relative;
+  padding: 1rem;
+  border: 2px solid greenyellow;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.4);
+  color: greenyellow;
+  width: 30%;
+  font-size: 1rem;
+  width: 35rem;
+  cursor: pointer;
+}
+.back_1_members .back_1_members_content .dropDown_content {
+  display: none;
+  width: 35rem;
+  position: absolute;
+  background: rgba(0,0,0,0.8);
+  z-index: 100;
+}
+.back_1_members .back_1_members_content .dropDown_content a {
+  color: greenyellow;
+  padding: 1rem;
+  text-decoration: none;
+  display: block;
+}
+.back_1_members .back_1_members_content .dropDown_content a:hover {
+  background: rgba(0,0,0,0.9);
+}
+.back_1_members .back_1_members_content .show {
+  display: block
+}
+.back_1_members .back_1_members_content .dropdown_table tr td:first-child {
+  width: 40%;
+}
+.back_1_members .back_1_members_content .dropdown_table tr:last-child td a {
+  text-decoration: none;
+  color: greenyellow;
+}
+.back_1_members .back_1_members_content table {
+  width: 100%;
+}
+.back_1_members .back_1_members_content .mem_table {
+  width: 100%;
+  position: relative;
+  top: 2.5rem;
+  margin-bottom: 2rem;
+}
+.back_1_members #add_member_modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 6000;
+  overflow: hidden;
+  transition: 160ms;
+}
+.back_1_members #add_member_modal .add_member_box {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  top: 2.5%;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%);
+  border: 3px solid greenyellow;
+  padding: 1rem;
+  background: rgba(0,0,0,0.9);
+  text-align: center;
+  color: white;
+  z-index: 4000;
+}
+.back_1_members #add_member_modal .add_member_box #close {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  position: fixed;
+  top: 0;
+  right: 5px;
+  padding: .7rem;
+  cursor: pointer;
+  transition: 160ms;
+}
+.back_1_members #add_member_modal .add_member_box form table tr td label {
+  text-transform: uppercase;
+}
+.back_1_members #add_member_modal .add_member_box #close:hover {
+  color: greenyellow;
+  transition: 160ms;
+}
+.back_1_members #add_member_modal .add_member_box h1 {
+  text-shadow: 1px 1px 1px #000000;
+  color: greenyellow;
+}
+.back_1_members #add_member_modal .add_member_box .line_1 {
+  position: relative;
+  top: .7rem;
+  width: 50%;
+  height: 2px;
+  background: greenyellow;
+  margin: auto;
+  box-shadow: 1px 1px 1px #000000;
+}
+.back_1_members #add_member_modal .add_member_box table {
+  position: relative;
+  top: 3rem;
+}
+.back_1_members #add_member_modal .add_member_box table .add_mem_input {
+  padding: 1rem;
+  width: 15rem;
+  position: relative;
+  border: 2px solid white;
+  border-radius: 3px;
+  background: transparent;
+  color: white;
+}
+.back_1_members #add_member_modal .add_member_box table .submit_btn {
+  padding: 1rem;
+  width: 100%;
+  position: relative;
+  border: 2px solid greenyellow;
+  color: greenyellow;
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: lighter;
+  transition: 160ms;
+}
+.back_1_members #add_member_modal .add_member_box table .submit_btn:hover {
+  background: rgba(173,255,47,0.6);
+  color: white;
+  text-shadow: 1px 1px 1px #000000;
+  transition: 160ms;
+}
+.back_1_members .back_1_members_content h1 {
+  font-size: 2rem;
+  color: greenyellow;
+  text-shadow: 1px 1px 1px #000000;
+  text-align: left;
+}
+.back_1_members .back_1_members_content .line_1 {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: greenyellow;
+  margin: auto;
+  box-shadow: 1px 1px 1px #000000;
+}
+.back_1_members #add_mem {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  right: 1.5rem;
+  bottom: 1.5rem;  
+  background: rgba(0,0,0,0.8);
+  border: 3px solid greenyellow;
+  border-radius: 50%;
+  font-size: 2.3rem;
+  text-align: center;
+  color: greenyellow;
+  z-index: 5000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 160ms;
+}
+.back_1_members #add_mem:hover {
+  background: rgba(0,0,0,0.6);
+  transition: 160ms;
+}
+/* .back_1_members #del_mem {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  right: 8.5rem;
+  bottom: 1.5rem;  
+  background: rgba(0,0,0,0.8);
+  border: 3px solid greenyellow;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  text-align: center;
+  color: greenyellow;
+  z-index: 5000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 160ms;
+}
+.back_1_members #del_mem:hover {
+  background: rgba(0,0,0,0.6);
+  transition: 160ms;
+} */
+.back_1_members .back_1_members_content .form_search {
+  float: right;
+}
+.back_1_members .back_1_members_content .search_bar {
+  position: relative;
+  width: 23rem;
+  padding: 1.2rem;
+  border: 2px solid greenyellow;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background: rgba(0,0,0,0.2);
+  color: white;
+  float: left;
+}
+.back_1_members .back_1_members_content table:first-child tr td a {
+  text-decoration: none;
+  color: greenyellow;
+  padding: 1.4rem 2rem;
+  border: 2px solid greenyellow;
+  cursor: pointer;
+  background: rgba(0,0,0,0.3)
+}
+.back_1_members .back_1_members_content table:first-child tr td a:hover {
+  background: rgba(0,0,0,0.4);
+}
+.back_1_members .back_1_members_content .searchBtn {
+  padding: 1.2rem;
+  border: 2px solid greenyellow;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background: rgba(0,0,0,0.5);
+  color: greenyellow;
+  float: left;
+  cursor: pointer;
+}
+.back_1_members .back_1_members_content .searchBtn:hover {
+  background: rgba(0,0,0,0.7);
+}
+.back_1_members .back_1_members_content .member_list {
+  position: relative;
+}
+.back_1_members .back_1_members_content .member_list table {
+  border: 2px solid greenyellow;
+}
+.back_1_members .back_1_members_content .member_list table tr th {
+  text-transform: uppercase;
+}
+.back_1_members .back_1_members_content .member_list table tr td:first-child {
+  width: 5%;
+}
+.back_1_members .back_1_members_content .member_list table tr td:nth-child(2) {
+  width: 18%;
+  text-transform: capitalize;
+}
+.back_1_members .back_1_members_content .member_list table tr td:nth-child(3), td:nth-child(4) {
+  width: 10%;
+}
+.back_1_members .back_1_members_content .member_list table tr td:nth-child(5) {
+  width: 10%;
+}
+.back_1_members .back_1_members_content .member_list table tr td:nth-child(6) {
+  width: 5%;
+}
+.back_1_members .back_1_members_content .member_list table tr:nth-child(odd) {
+  background: rgba(0,0,0,0.4);
+}
+.back_1_members .back_1_members_content .member_list table tr:nth-child(even) {
+  background: rgba(0,0,0,0.2);
+}
+.back_1_members .back_1_members_content .member_list table tr th {
+  color: greenyellow;
+}
+.back_1_members .back_1_members_content .member_list table tr td:last-child {
+  width: 20%;
+}
+.back_1_members .back_1_members_content .member_list table tr td:last-child a {
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  background: rgba(0,0,0,0.3);
+  padding: .6rem .9rem;
+  transition: 160ms;
+  cursor: pointer;
+}
+.back_1_members .back_1_members_content .member_list table tr td:last-child a:hover {
+  background: rgba(173,255,47,0.6);
+  transition: 160ms;
+}
+.back_1_members .back_1_members_content .member_list #updateBack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  background-attachment: fixed;
+  display: none;
+  z-index: 10000;
+}
+.back_1_members .back_1_members_content .member_list #updateBack #updateBox {
+  position: fixed;
+  top: 5%;
+  left: 2.5%;
+  width: 95%;
+  height: 90%;
+  background: rgba(0,0,0,0.7);
+  border: 4px solid white;
+  z-index: 10000;
+  display: none;
+}
+.back_1_members .back_1_members_content .member_list #updateBack #updateBox #closeUpd {
+  position: relative;
+  float: right;
+  top: -.7rem;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: bolder;
+}
+/*
+.back_1_members .back_1_members_content .member_list .member {
+  position: relative;
+  width: 90%;
+  padding: 1rem;
+  background: rgba(0,0,0,0.6);
+  color: greenyellow;
+  margin: auto;
+  border: 2px solid greenyellow;
+  cursor: pointer;
+  text-align: left;
+  transition: 160ms;
+}
+.back_1_members .back_1_members_content .member_list .member:hover {
+  background: rgba(0,0,0,0.8);
+  transition: 160ms;
+}
+.back_1_members .back_1_members_content .member_list .member p {
+  display: inline-block;
+}
+.back_1_members .back_1_members_content .member_list .member a {
+  float: right;
+  background: rgba(0,0,0,0.5);
+  padding: 1rem;
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  transition: 160ms;
+}
+.back_1_members .back_1_members_content .member_list .member a:hover {
+  background: rgba(173,255,47,0.6);
+  transition: 160ms;
+}*/
+
+/*Members Background-1*/
+
+/*Login Background-1*/
+
+.back_1_login {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+.back_1_login .back_1_login_content {
+  position: fixed;
+  top: 10%;
+  width: 80%;
+  left: 50%;
+  padding: 1.4rem;
+  margin: auto;
+  background: rgba(0,0,0,0.5);
+  border: 3px solid greenyellow;
+  border-radius: 5px;
+  transform: translate(-50%);
+}
+.back_1_login .back_1_login_content table {
+  width: 100%;
+}
+.back_1_login .back_1_login_content table tr td {
+  width: 50%;
+}
+.back_1_login .back_1_login_content h1 {
+  color: greenyellow;
+  text-transform: uppercase
+}
+.back_1_login .back_1_login_content .line_1 {
+  position: relative;
+  width: 50%;
+  height: 3px;
+  background: greenyellow;
+  margin: auto;
+  box-shadow: 1px 1px 1px #000000;
+}
+.back_1_login .back_1_login_content form {
+  position: relative;
+}
+.back_1_login .back_1_login_content .pass_visible {
+  position: relative;
+  top: 2px;
+} 
+.back_1_login .back_1_login_content .login_input {
+  padding: 1rem;
+  border: 2px solid white;
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+  width: 60%;
+  color: white;
+}
+.back_1_login .back_1_login_content .login_btn {
+  padding: 1.4rem;
+  border: 2px solid greenyellow;
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+  width: 15rem;
+  font-size: 1rem;
+  color: greenyellow;
+  cursor: pointer;
+  transition: 160ms;
+}
+.back_1_login .back_1_login_content .login_btn:hover {
+  background: rgba(0,0,0,0.5);
+  transform: scale(1.05) translateY(-5px);
+  transition: 160ms;
+}
+
+/*Login Background-1*/
+
+/* Update Page */
+
+.back_1_update {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background-attachment: fixed;
+  color: white;
+}
+.back_1_update .back_1_update_content {
+  position: relative;
+  top: 5rem;
+}
+.back_1_update .back_1_update_content #updTable {
+  width: 65%;
+  float: left;
+  border: 2px solid greenyellow;
+  margin-bottom: 2rem;
+}
+.back_1_update .back_1_update_content #updTable tr:nth-child(odd) {
+  background: rgba(0,0,0,0.4);
+}
+.back_1_update .back_1_update_content #updTable tr:nth-child(even) {
+  background: rgba(0,0,0,0.2);
+}
+.back_1_update .back_1_update_content #updTable tr th {
+  text-transform: uppercase;
+  color: greenyellow;
+}
+.back_1_update .back_1_update_content #updTable tr td:first-child {
+  width: 8%;
+}
+.back_1_update .back_1_update_content #updTable tr td:last-child {
+  width: 10%;
+}
+.back_1_update .back_1_update_content #updTable tr td a {
+  text-decoration: none;
+  color: greenyellow;
+  padding: .7rem;
+  border: 2px solid greenyellow;
+}
+.back_1_update .back_1_update_content #updTable tr td a:hover {
+  color: white;
+  background: rgba(0,0,0,0.3);
+}
+.back_1_update .back_1_update_content #updTable1 {
+  float: left;
+  width: 35%;
+}
+.back_1_update .back_1_update_content #updTable1 tr td {
+  text-align: center;
+  padding: 1rem
+}
+.back_1_update .back_1_update_content #updTable1 tr th {
+  font-size: 1.5rem;
+}
+.back_1_update .back_1_update_content #updTable1 tr td input {
+  width: 12rem;
+  padding: .7rem;
+  border-radius: 2px;
+  border: 1px solid white;
+  background: rgba(0,0,0,0.2);
+  color: white;
+}
+.back_1_update .back_1_update_content #updTable1 tr td select {
+  padding: .7rem;
+  width: 6rem;
+  background: rgba(0,0,0,0.2);
+  color: white;
+  border: 1px solid white;
+}
+.back_1_update .back_1_update_content #updTable1 tr:last-child td input {
+  border: 3px solid greenyellow;
+  color: greenyellow;
+  cursor: pointer;
+  background: rgba(0,0,0,0.3)
+}
+.back_1_update .back_1_update_content #updTable1 tr:last-child td input:hover {
+  background: rgba(0,0,0,0.7)
+}
+.back_1_update .back_1_update_content #updTable1 tr td select option {
+  background: rgba(0,0,0,0.7);
+}
+.back_1_update .back_1_update_content #updTable tr th {
+  text-transform: uppercase;
+}
+.back_1_update .back_1_update_content #updTable tr td {
+  text-align: center;
+}
+.back_1_update .back_1_update_content .memberInfo {
+  position: relative;
+}
+.back_1_update .back_1_update_content .memberInfo h2 {
+  text-transform: capitalize;
+  text-shadow: 1px 1px 1px #000000;
+  position: relative;
+  left: 1rem;
+}
+.back_1_update .back_1_update_content .memberInfo .line {
+  width: 100%;
+  background: greenyellow;
+  height: 3px;
+  margin-bottom: 1rem;
+}
+
+/* Update Page */
+
+/* Loan Page */
+
+.back_1_loan {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background: #555555;
+}
+.back_1_loan .back_1_loan_content {
+  position: relative;
+  top: 6rem;
+}
+.back_1_loan .back_1_loan_content table:first-child {
+  width: 100%;
+}
+.back_1_loan .back_1_loan_content table:first-child td h1 {
+  font-size: 2rem;
+  color: greenyellow;
+  text-shadow: 1px 1px 1px #000000;
+  text-align: left;
+}
+.back_1_loan .back_1_loan_content .search_bar {
+  position: relative;
+  width: 23rem;
+  padding: 1.2rem;
+  border: 2px solid greenyellow;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background: rgba(0,0,0,0.2);
+  color: white;
+  float: right;
+}
+.back_1_loan .back_1_loan_content .line_1 {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: greenyellow;
+  margin: auto;
+  box-shadow: 1px 1px 1px #000000;
+}
+.back_1_loan .back_1_loan_content .member_list {
+  position: relative;
+  top: 2rem;
+}
+.back_1_loan .back_1_loan_content .member_list table {
+  border: 2px solid greenyellow;
+}
+.back_1_loan .back_1_loan_content .member_list table tr th {
+  text-transform: uppercase;
+}
+.back_1_loan .back_1_loan_content .member_list table tr td:first-child {
+  width: 5%;
+}
+.back_1_loan .back_1_loan_content .member_list table tr td:nth-child(2) {
+  width: 18%;
+  text-transform: capitalize;
+}
+.back_1_loan .back_1_loan_content .member_list table tr td:nth-child(3), td:nth-child(4) {
+  width: 10%;
+}
+.back_1_loan .back_1_loan_content .member_list table tr td:nth-child(5) {
+  width: 10%;
+}
+.back_1_loan .back_1_loan_content .member_list table tr td:nth-child(6) {
+  width: 5%;
+}
+.back_1_loan .back_1_loan_content .member_list table tr:nth-child(odd) {
+  background: rgba(0,0,0,0.4);
+}
+.back_1_loan .back_1_loan_content .member_list table tr:nth-child(even) {
+  background: rgba(0,0,0,0.2);
+}
+.back_1_loan .back_1_loan_content .member_list table tr th {
+  color: greenyellow;
+}
+.back_1_loan .back_1_loan_content .member_list table tr td:last-child {
+  width: 20%;
+}
+.back_1_loan .back_1_loan_content .member_list table tr td {
+  text-align: center;
+  color: white;
+}
+.back_1_loan .back_1_loan_content .member_list table tr td:last-child a {
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  background: rgba(0,0,0,0.3);
+  padding: .6rem .9rem;
+  transition: 160ms;
+  cursor: pointer;
+}
+.back_1_loan .back_1_loan_content .member_list table tr td:last-child a:hover {
+  background: rgba(173,255,47,0.6);
+  transition: 160ms;
+}
+.back_1_loan #add_mem {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  right: 1.5rem;
+  bottom: 1.5rem;  
+  background: rgba(0,0,0,0.8);
+  border: 3px solid greenyellow;
+  border-radius: 50%;
+  font-size: 2.3rem;
+  text-align: center;
+  color: greenyellow;
+  z-index: 5000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 160ms;
+}
+.back_1_loan #add_mem:hover {
+  background: rgba(0,0,0,0.6);
+  transition: 160ms;
+}
+
+.back_1_loan #add_member_modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 6000;
+  overflow: hidden;
+  transition: 160ms;
+}
+.back_1_loan #add_member_modal .add_member_box {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  top: 2.5%;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%);
+  border: 3px solid greenyellow;
+  padding: 1rem;
+  background: rgba(0,0,0,0.9);
+  text-align: center;
+  color: white;
+  z-index: 4000;
+}
+.back_1_loan #add_member_modal .add_member_box #close {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  position: fixed;
+  top: 0;
+  right: 5px;
+  padding: .7rem;
+  cursor: pointer;
+  transition: 160ms;
+}
+.back_1_loan #add_member_modal .add_member_box form table tr td label {
+  text-transform: uppercase;
+}
+.back_1_loan #add_member_modal .add_member_box #close:hover {
+  color: greenyellow;
+  transition: 160ms;
+}
+.back_1_loan #add_member_modal .add_member_box h1 {
+  text-shadow: 1px 1px 1px #000000;
+  color: greenyellow;
+}
+.back_1_loan #add_member_modal .add_member_box .line_1 {
+  position: relative;
+  top: .7rem;
+  width: 50%;
+  height: 2px;
+  background: greenyellow;
+  margin: auto;
+  box-shadow: 1px 1px 1px #000000;
+}
+.back_1_loan #add_member_modal .add_member_box table {
+  position: relative;
+  top: 3rem;
+}
+.back_1_loan #add_member_modal .add_member_box table .add_mem_input {
+  padding: 1rem;
+  width: 15rem;
+  position: relative;
+  border: 2px solid white;
+  border-radius: 3px;
+  background: transparent;
+  color: white;
+}
+.back_1_loan #add_member_modal .add_member_box table .submit_btn {
+  padding: 1rem;
+  width: 100%;
+  position: relative;
+  border: 2px solid greenyellow;
+  color: greenyellow;
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: lighter;
+  transition: 160ms;
+}
+.back_1_loan #add_member_modal .add_member_box table .submit_btn:hover {
+  background: rgba(173,255,47,0.6);
+  color: white;
+  text-shadow: 1px 1px 1px #000000;
+  transition: 160ms;
+}
+.back_1_loan .back_1_loan_content h1 {
+  font-size: 2rem;
+  color: greenyellow;
+  text-shadow: 1px 1px 1px #000000;
+  text-align: left;
+}
+.back_1_loan .back_1_loan_content .member_list .mem_table {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.back_1_loan .back_1_loan_content .member_list .deleteConfirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 10000;
+  display: none;
+}
+.back_1_loan .back_1_loan_content .member_list .deleteConfirm .delete {
+  position: relative;
+  top: 35%;
+  left: 24%;
+  width: 50%;
+  height: 20%;
+  background: rgba(255,255,255,0.8);
+  padding: 1rem;
+  border: 4px solid greenyellow;
+}
+.back_1_loan .back_1_loan_content .member_list .deleteConfirm .delete a {
+  padding: 1rem 1.8rem;
+  border: 2px solid greenyellow;
+  background: rgba(0,0,0,0.6);
+  color: greenyellow;
+  text-decoration: none;
+  float: right;
+  margin: .7rem .5rem;
+}
+.back_1_loan .back_1_loan_content .member_list .deleteConfirm .delete a:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Loan Page */
+
+/* Graph */
+
+.graph_back {
+  position: relative;
+  top: 5rem;
+  padding: 1rem;
+}
+.graph_back .graphTable1 {
+  border: 2px solid greenyellow;
+  width: 100%;
+}
+.graph_back .graphTable1 tr td form select {
+  padding: .8rem 1.2rem;
+  font-size: 1rem;
+  background: rgba(0,0,0,0.3);
+  color: white
+}
+.graph_back .graphTable1 tr {
+  background: rgba(0,0,0,0.3);
+}
+.graph_back .graphTable1 tr th {
+  color: greenyellow;
+  text-transform: uppercase
+}
+.graph_back .graphTable1 tr td:first-child {
+  width: 20%;
+}
+.graph_back .graphTable1 tr td:nth-child(2), .graph_back .graphTable1 tr td:nth-child(3) {
+  width: 16%;
+}
+.graph_back .graphTable1 tr td:last-child {
+  width: 15%;
+}
+.graph_back .graphTable1 tr td {
+  color: white;
+  text-align: center
+}
+.graph_back .graphTable1 tr td form select option {
+  background: rgba(0,0,0,0.6)
+}
+.graph_back .graphTable1 tr td form .submitGraph {
+  padding: .8rem 1.3rem;
+  border: 2px solid greenyellow;
+  color: greenyellow;
+  background: rgba(0,0,0,0.5);
+  text-transform: uppercase; 
+  cursor: pointer;
+}
+.graph_back .graphTable1 tr td form .submitGraph:hover {
+  background: rgba(0,0,0,0.7)
+}
+
+/* Graph */
